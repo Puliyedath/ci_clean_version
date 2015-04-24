@@ -5,13 +5,21 @@ class Main extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->output->enable_profiler();
+        date_default_timezone_set('America/Los_Angeles');
+		//$this->output->enable_profiler();
 	}
 
 	public function index()
 	{
-		echo "Welcome to CodeIgniter. The default Controller is Main.php";
+        $this->populateView();
+        //$this->load->view('index.php');
 	}
+
+    public function populateView(){
+        $date = date('Y-m-d H:i:s');
+        $this->session->set_flashdata('ttt', $date);
+        $this->load->view('index.php');
+    }
 }
 
 //end of main controller
