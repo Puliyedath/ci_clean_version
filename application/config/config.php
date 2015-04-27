@@ -2,7 +2,7 @@
 
 $config['base_url']	= '';
 
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 $config['uri_protocol']	= 'AUTO';
 
@@ -24,7 +24,7 @@ $config['controller_trigger']	= 'c';
 $config['function_trigger']		= 'm';
 $config['directory_trigger']	= 'd'; 
 
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 2;
 $config['log_path'] = '';
 $config['log_date_format'] = 'Y-m-d H:i:s';
 

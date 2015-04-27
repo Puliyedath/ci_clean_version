@@ -1,17 +1,35 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Main extends CI_Controller {
+    class Main extends CI_Controller {
 
-	public function __construct()
-	{
-		parent::__construct();
-		$this->output->enable_profiler();
-	}
+        public function __construct()
+        {
+            parent::__construct();
+            //$this->output->enable_profiler();
+        }
 
-	public function index()
-	{
-		echo "Welcome to CodeIgniter. The default Controller is Main.php";
-	}
-}
+        public function index()
+        {
+            $this->load->helper(array('form', 'url'));
 
-//end of main controller
+            $this->load->library('form_validation');
+
+            $this->form_validation->set_rules('username', 'Username', 'required');
+            $this->form_validation->set_rules('password', 'Password', 'required',
+                array('required' => 'You must provide a %s.')
+            );
+            $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required');
+
+            if ($this->form_validation->run() == FALSE)
+            {
+                $this->load->view('myform');
+            }
+            else
+            {
+                $this->load->view('formsucess');
+            }
+        }
+    }
+
+    //end of main controller
