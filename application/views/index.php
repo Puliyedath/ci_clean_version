@@ -41,8 +41,8 @@ p{
             <div class="col-md-6">
                 <?php echo form_open('form'); ?>
                     <ul>
-                        <li>Email <input type="text" name="email" value="<?php echo set_value('email'); ?>" ></li>
-                        <li>Password  <input type="text" name="pwd" value="<?php echo set_value('pwd'); ?>"></li>
+                        <li>Email   <input type="text" name="email" value="<?php echo set_value('email'); ?>" ></li>
+                        <li>Password<input type="text" name="pwd" value="<?php echo set_value('pwd'); ?>"></li>
                         <li><input type="submit" name="login" value="login"></li>
                     </ul>
                 <?php echo form_close(""); ?>
