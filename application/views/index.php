@@ -12,7 +12,7 @@ ul{
     list-style:none;
 }
 .row{
-    border-top: 1px solid black;
+    margin-left: 10px;
     margin-top: 10px;
     padding-top: 10px;
 }
@@ -33,10 +33,12 @@ p{
 }
     </style>
     <body>
-        <h1 class="text-center">Login And Registration</h1>
+        <h1 class="text-center row">Login And Registration</h1>
+        <div class="row">
+            <?php echo validation_errors(); ?>
+        </div>
         <div class="row">
             <div class="col-md-6">
-                <?php echo validation_errors(); ?>
                 <?php echo form_open('form'); ?>
                     <ul>
                         <li>Email <input type="text" name="email" value="<?php echo set_value('email'); ?>" ></li>
@@ -45,10 +47,8 @@ p{
                     </ul>
                 <?php echo form_close(""); ?>
             </div>
-            <?php echo form_open('/Login/register'); ?>
-            <?php echo validation_errors(); ?>
-
             <div class="col-md-6">
+                <?php echo form_open('/Login/register'); ?>
                 <ul>
                     <li>Email <input type="text" name="email" value="<?php echo set_value('email'); ?>"> </li>
                     <li>First_name <input type="text" name="first_name"  value="<?php echo set_value('first_name'); ?>"></li>
